@@ -22,8 +22,8 @@ public class TaskType {
     public void addType(String type) {
         this.type.add(type);
     }
-
-    public static void main(String[] args) {
+    // nak call TaskType.tasktype();
+    public static void tasktype() {
         ArrayList<String> types = new ArrayList<>();
         TaskType taskType = new TaskType(types);
         Scanner scanner = new Scanner(System.in);
