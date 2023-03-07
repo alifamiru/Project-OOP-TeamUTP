@@ -9,7 +9,6 @@ public class CGPA {
     private double totalPoint;
     private double gpa;
     private double[] list = new double[10];
-    private int semester;
 
     //methods of operation
     public double calcGPA(){
