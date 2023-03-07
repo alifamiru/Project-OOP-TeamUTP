@@ -7,9 +7,11 @@ public class Lecturer{
     private String phoneNum;
     private String email;
 
-
     public void setName(Name name) {
         this.name = name;
+    }
+    public Name getName(){
+        return name;
     }
 
     public void setOfficeAddr(String officeAddr) {
@@ -29,7 +31,13 @@ public class Lecturer{
     }
 
     public void createLecturer() {
+        System.out.println("----------Lecturer's Details----------");
+        Lecturer lec = new Lecturer();
         Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Name of lecturer: ");
+        Name name = lec.getName();
+        setName(name);
 
         System.out.print("Office room: ");
         String officeAddr = scanner.next();
@@ -46,8 +54,10 @@ public class Lecturer{
         System.out.print("Lecturer's email: ");
         String email = scanner.next();
         setEmail(email);
-        
+
         scanner.close();
+
+        System.out.println("Lecturer's details created successfully.");
 
     }
 
@@ -59,5 +69,9 @@ public class Lecturer{
         System.out.println("Email: " + this.email);
     }
 
-
+    public static void main(String[] args) {
+        Lecturer lecturer = new Lecturer();
+        lecturer.createLecturer();
+        lecturer.displayLecturer();
+    }
 }
