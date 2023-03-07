@@ -1,11 +1,7 @@
 import java.util.ArrayList;
-import java.util.Scanner;
 public class TaskType {
-    public final ArrayList<String> type;
+     private ArrayList<String> type = new ArrayList<String>();
 
-    public TaskType(ArrayList<String> type) {
-        this.type = type;
-    }
 
     public int getIndex(String type) {
         return this.type.indexOf(type);
@@ -23,9 +19,3 @@ public class TaskType {
         this.type.add(type);
     }
 }
-    
-    
-    
-    
-    
-    

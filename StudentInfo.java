@@ -1,16 +1,17 @@
 public class StudentInfo {
 
-    // private Name name ; //Student Name
+    private Name name ; //Student Name
     private String StudentID ; //Student ID
     private String StudentFaculty; //Student Faculty
-    private String StudentProgramme ; //Student Programme
+    private String StudentProgramme ; //Student Program
     private String StudentYear ; // Student Year
     private String StudentSemester ; // Student Semester
+    private to_do_list ToDoList;
 
     /*Setter method*/
-    /* public void setName(Name name){
+    public void setName(Name name){
         this.name = name ;
-    } */
+    } 
     public void setStudentID(String StudentID){
         this.StudentID = StudentID ;
     }
@@ -29,9 +30,9 @@ public class StudentInfo {
 
     /* getter method */
 
-    /* public Name getName(){
+    public Name getName(){
         return name ;
-    } */
+    }
     public String getStudentID(){
         return StudentID ;
     }
@@ -47,5 +48,13 @@ public class StudentInfo {
     public String getStudentSemester(){
         return StudentSemester ;
     }
+    
+    public to_do_list getToDoList() {
+		return ToDoList;
+	}
+	public void setToDoList(to_do_list ToDoList) {
+		this.ToDoList = ToDoList;
+	}
+	
 
 }

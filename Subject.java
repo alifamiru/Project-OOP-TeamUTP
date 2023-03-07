@@ -68,6 +68,8 @@ public class Subject {
         System.out.print("Credit Hour: ");
         int creditHr = scanner.nextInt();
         setCreditHr(creditHr);
+        
+        scanner.close();
     }
     // " displaySubject
 

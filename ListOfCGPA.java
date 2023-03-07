@@ -17,6 +17,7 @@ public class ListOfCGPA {
             totalGPA += gpa;
         }
         cgpa = totalGPA/numOfSemester;
+        scanner.close();
         return cgpa;
     }
 

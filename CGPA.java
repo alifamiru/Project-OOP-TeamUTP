@@ -1,3 +1,4 @@
+
 import java.util.Scanner;
 public class CGPA {
     //data attributes
@@ -52,6 +53,7 @@ public class CGPA {
             totalPoint += point;
             fullCreditHour += creditHour;
         }
+        scanner.close();
         gpa = totalPoint / fullCreditHour;
         return gpa;
     }
@@ -60,17 +62,7 @@ public class CGPA {
         System.out.print("Enter semester: ");
         semester = scanner.nextInt();
         System.out.println("Your GPA for semester "+ semester + " : " + String.format("%.2f", gpa));
+        scanner.close();
     }
 
-    public static void main(String[] args){
-        Scanner scanner = new Scanner(System.in);
-        CGPA semester = new CGPA();
-        ListOfCGPA fatiha = new ListOfCGPA();
-
-        semester.calcGPA();
-        semester.displayGPA();
-
-        System.out.println("CGPA: " + fatiha.calcCGPA());
-
-    }
 }

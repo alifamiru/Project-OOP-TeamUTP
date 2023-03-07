@@ -7,13 +7,6 @@ public class Lecturer{
     private String phoneNum;
     private String email;
 
-    public Lecturer() {
-        this.name = "";
-        this.officeAddr = "";
-        this.officeNum = "";
-        this.phoneNum = "";
-        this.email = "";
-    }
 
     public void setName(Name name) {
         this.name = name;
@@ -38,10 +31,6 @@ public class Lecturer{
     public void createLecturer() {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Name of lecturer: ");
-        Name name = scanner.nextLine();
-        setName(name);
-
         System.out.print("Office room: ");
         String officeAddr = scanner.next();
         setOfficeAddr(officeAddr);
@@ -57,6 +46,8 @@ public class Lecturer{
         System.out.print("Lecturer's email: ");
         String email = scanner.next();
         setEmail(email);
+        
+        scanner.close();
 
     }
 
@@ -68,9 +59,5 @@ public class Lecturer{
         System.out.println("Email: " + this.email);
     }
 
-    public static void main(String[] args) {
-        Lecturer lecturer = new Lecturer();
-        lecturer.createLecturer();
-        lecturer.displayLecturer();
-    }
+
 }
