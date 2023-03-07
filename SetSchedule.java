@@ -1,38 +1,38 @@
-import java.sql.Time;
+
+import java.time.LocalTime;
 import java.util.ArrayList;
-import java.util.List;
 
 public class SetSchedule {
     // ATTRIBUTES
     private ArrayList<String> daysOfWeek = new ArrayList<String>();
-    private Time startTime;
-    private Time endTime;
+    private LocalTime startTime;
+    private LocalTime endTime;
     private ArrayList<Subject> subjectName = new ArrayList<Subject>();
 
     // METHODS
     public void addDaysOfWeek(String day){
         this.daysOfWeek.add(day);
     }
-    public void setStartTime(Time startTime){
+    public void setStartTime(LocalTime startTime){
         this.startTime = startTime;
     }
-    public void setEndTime(Time endTime){
+    public void setEndTime(LocalTime endTime){
         this.endTime = endTime;
     }
 
     public String getDaysOfWeek(int i){
-       return this.daysOfWeek.get(i);
+        return this.daysOfWeek.get(i);
     }
-    
+
     public int getindexDay(String day) {
-    	return this.daysOfWeek.indexOf(day);
+        return this.daysOfWeek.indexOf(day);
     }
-    
-    public Time getStartTime(){
-        return startTime;
+
+    public void getStartTime(){
+        System.out.println("Start Time: " + this.startTime);
     }
-    public Time getEndTime(){
-        return endTime;
+    public void getEndTime(){
+        System.out.println("End Time: " + this.endTime);
     }
 
     public void addSubject(Subject subjectName){
@@ -41,8 +41,8 @@ public class SetSchedule {
     public void removeSubject(int index){
         this.subjectName.remove(index);
     }
-    
+
     public int getindexsubject(Subject subjectname) {
-    	return this.subjectName.indexOf(subjectname);
+        return this.subjectName.indexOf(subjectname);
     }
 }
