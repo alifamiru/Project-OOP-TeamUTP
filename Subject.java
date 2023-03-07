@@ -5,7 +5,7 @@ public class Subject {
     // ATTRIBUTES
     private String subjectName;
     private String description;
-    ArrayList<Lecturer> lecturer = new ArrayList<Lecturer>();
+    ArrayList<Name> lecturer = new ArrayList<>();
     private String venue;
     private int creditHr;
 
@@ -16,7 +16,7 @@ public class Subject {
     public void setDescription(String description){
         this.description = description;
     }
-    public void setLecturer(Lecturer lecturer){
+    public void setLecturer(Name lecturer){
         this.lecturer.add(lecturer);
     }
     public void setVenue(String venue){
@@ -32,7 +32,7 @@ public class Subject {
     public String getDescription(){
         return description;
     }
-    public ArrayList<Lecturer> getLecturer(){
+    public ArrayList<Name> getLecturer(){
             return lecturer;
     }
     public String getVenue(){
@@ -44,6 +44,8 @@ public class Subject {
 
     //method createSubject -- buat kat Main class?
     public void createSubject(){
+        System.out.println("----------Subject's Details----------");
+
         Scanner scanner = new Scanner(System.in);
         Lecturer lec = new Lecturer();
 
@@ -55,11 +57,11 @@ public class Subject {
         String description = scanner.next();
         setDescription(description);
 
-        /*
+
         System.out.print("Name of Lecturer: ");
-        Name name = lec.name.getFName;
-        setLecturer();
-         */
+        Name name = lec.getName();
+        setLecturer(name);
+
 
         System.out.print("Venue: ");
         String venue = scanner.nextLine();
@@ -68,9 +70,18 @@ public class Subject {
         System.out.print("Credit Hour: ");
         int creditHr = scanner.nextInt();
         setCreditHr(creditHr);
-        
+
         scanner.close();
+
+        System.out.println("Subject's details created successfully.");
     }
-    // " displaySubject
+
+    public void displaySubject(){
+        System.out.println("Subject Name: " + getSubjectName());
+        System.out.println("Subject Description: " + getDescription());
+        System.out.println("Lecturer's Name: " + getLecturer());
+        System.out.println("Venue: " + getVenue());
+        System.out.println("Credit Hour: " + getCreditHr());
+    }
 
 }
