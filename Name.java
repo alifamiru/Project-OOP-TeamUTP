@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 public class Name {
 private String fName;
@@ -24,6 +25,27 @@ public String getlName() {
 public void setlName(String lName) {
 	this.lName = lName;
 }
+
+public void format() {
+    Scanner scanner = new Scanner(System.in);
+    String userInput;
+
+    // Prompt the user for the values of the attributes
+    System.out.print("Enter first name: ");
+    userInput = scanner.nextLine();
+    setfName(userInput);
+
+    System.out.print("Enter the middle name: ");
+    userInput = scanner.nextLine();
+    setmName(userInput);
+
+    System.out.print("Enter the last name: ");
+    userInput = scanner.nextLine();
+    setlName(userInput);
+
+    System.out.println("Values set successfully.");
+}
+
 
  
 
