@@ -1,11 +1,13 @@
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.Scanner;
 
 public class Task {
     private String description;
-    private Date dueDate;
+    private LocalDate dueDate;
     private boolean complete;
     private String type;
     
@@ -16,11 +18,11 @@ public class Task {
         this.description = description;
     }
     
-    public Date getDueDate() {
+    public LocalDate getDueDate() {
         return dueDate;
     }
-    public void setDueDate(Date dueDate) {
-        this.dueDate = dueDate;
+    public void setDueDate(int year, int month, int dayMonth) {
+        this.dueDate = LocalDate.of(year, month, dayMonth);
     }
     
     public boolean getComplete() {
