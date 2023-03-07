@@ -1,15 +1,10 @@
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.Date;
 import java.util.Scanner;
 
-public class Task {
+public class Task extends TaskType{
     private String description;
     private LocalDate dueDate;
     private boolean complete;
-    private String type;
     
     public String getDescription() {
         return description;
@@ -32,16 +27,8 @@ public class Task {
         this.complete = complete;
     }
     
-    public String getType() {
-        return type;
-    }
-    public void setType(String type) {
-        this.type = type;
-    }
-    
-    public void createtask() {
+    public void createTask() {
         Scanner scanner = new Scanner(System.in);
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         String userInput;
 
         // Prompt the user for the values of the attributes
@@ -49,25 +36,32 @@ public class Task {
         userInput = scanner.nextLine();
         setDescription(userInput);
 
-        System.out.print("Due Date (dd/MM/yyyy): ");
-        String dueDateStr = scanner.nextLine();
-        try {
-            Date dueDate = dateFormat.parse(dueDateStr);
-            setDueDate(dueDate);
-        } catch (ParseException e) {
-            System.out.println("Invalid date format. Please enter the date in dd/MM/yyyy format.");
-        }
+        System.out.print("Due Date of year(yyyy): ");
+        int year = scanner.nextInt();
+        System.out.print("Due Date of month(mm): ");
+        int month = scanner.nextInt();
+        System.out.print("Due Date of day(dd): ");
+        int day = scanner.nextInt();
+        
+        setDueDate(year,month,day);
 
         System.out.print("Enter 'true' if the task is complete or 'false' if it is incomplete: ");
-        userInput = scanner.nextLine();
+        userInput = scanner.next();
         setComplete(Boolean.parseBoolean(userInput));
 
-        System.out.print("Enter the type of task: ");
-        userInput = scanner.nextLine();
-        setType(userInput);
         
         scanner.close();
 
         System.out.println("Task created successfully.");
     }
+    
+    public static void main(String[] args) {
+    	Task task = new Task();
+    	task.createTask();
+    	System.out.println(task.getDescription());
+    	System.out.println(task.getDueDate());
+    	System.out.println(task.getComplete());
+    	
+    }
+
 }
