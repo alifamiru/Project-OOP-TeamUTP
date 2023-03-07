@@ -1,4 +1,3 @@
-
 import java.util.Scanner;
 public class CGPA {
     //data attributes
@@ -9,6 +8,7 @@ public class CGPA {
     private double point;
     private double totalPoint;
     private double gpa;
+    private double[] list = new double[10];
     private int semester;
 
     //methods of operation
@@ -53,16 +53,45 @@ public class CGPA {
             totalPoint += point;
             fullCreditHour += creditHour;
         }
-        scanner.close();
         gpa = totalPoint / fullCreditHour;
         return gpa;
     }
-    public void displayGPA(){
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter semester: ");
-        semester = scanner.nextInt();
-        System.out.println("Your GPA for semester "+ semester + " : " + String.format("%.2f", gpa));
-        scanner.close();
+    public void add(double gpa, int i) {
+        this.list[i] = gpa;
     }
+    public void displayGPA(){
+        for(int i = 0; i < list.length; i++){
+            System.out.println("GPA for semester " + (i + 1) + " : " + String.format("%.2f", list[i]));
+        }
+    }
+    public static void main(String[] args){
+        Scanner scanner = new Scanner(System.in);
+        CGPA semester = new CGPA();
+        ListOfCGPA fatiha = new ListOfCGPA();
+        int index = 0;
+        int option;
 
+        System.out.println("CGPA CALCULATOR");
+        System.out.print("Enter which option number: ");
+        option = scanner.nextInt();
+        while(option != 3){
+            if(option == 1){
+                System.out.print("What semester do you wish to calculate your gpa? ");
+                index = scanner.nextInt();
+                semester.add(semester.calcGPA(),(index - 1));
+                semester.displayGPA();
+                System.out.print("Do you wish to continue? [Press 3 to exit]: ");
+                option = scanner.nextInt();
+            } else if (option == 2) {
+                System.out.println("CGPA: " + fatiha.calcCGPA());
+                System.out.print("Do you wish to continue? [Press 3 to exit]: ");
+                option = scanner.nextInt();
+            }else {
+                System.out.println("Invalid input. Please reenter the option number.");
+                System.out.print("Enter which option number: ");
+                option = scanner.nextInt();
+            }
+        }
+        System.out.println("Thank you!!");
+    }
 }
