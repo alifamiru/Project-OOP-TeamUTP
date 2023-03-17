@@ -39,20 +39,20 @@ public class Lecturer{
         Name name = lec.getName();
         setName(name);
 
-        System.out.print("Office room: ");
-        String officeAddr = scanner.next();
+        System.out.print("\nOffice room: ");
+        String officeAddr = scanner.nextLine();
         setOfficeAddr(officeAddr);
 
         System.out.print("Office number: ");
-        String officeNum = scanner.next();
+        String officeNum = scanner.nextLine();
         setOfficeNum(officeNum);
 
         System.out.print("Lecturer's phone number: ");
-        String phoneNum = scanner.next();
+        String phoneNum = scanner.nextLine();
         setPhoneNum(phoneNum);
 
         System.out.print("Lecturer's email: ");
-        String email = scanner.next();
+        String email = scanner.nextLine();
         setEmail(email);
 
         scanner.close();
