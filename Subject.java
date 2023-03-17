@@ -33,7 +33,7 @@ public class Subject {
         return description;
     }
     public ArrayList<Name> getLecturer(){
-            return lecturer;
+        return lecturer;
     }
     public String getVenue(){
         return venue;
@@ -54,7 +54,7 @@ public class Subject {
         setSubjectName(subjectName);
 
         System.out.print("Subject Description: ");
-        String description = scanner.next();
+        String description = scanner.nextLine();
         setDescription(description);
 
 
@@ -63,7 +63,7 @@ public class Subject {
         setLecturer(name);
 
 
-        System.out.print("Venue: ");
+        System.out.print("\nVenue: ");
         String venue = scanner.nextLine();
         setVenue(venue);
 
@@ -83,5 +83,4 @@ public class Subject {
         System.out.println("Venue: " + getVenue());
         System.out.println("Credit Hour: " + getCreditHr());
     }
-
 }
