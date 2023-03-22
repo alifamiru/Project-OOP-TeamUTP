@@ -42,7 +42,7 @@ public class Subject {
         return creditHr;
     }
 
-    //method createSubject -- buat kat Main class?
+    //method createSubject
     public void createSubject(){
         System.out.println("----------Subject's Details----------");
 
