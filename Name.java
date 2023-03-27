@@ -26,7 +26,7 @@ public void setlName(String lName) {
 	this.lName = lName;
 }
 
-public void format() {
+public void createname() {
     Scanner scanner = new Scanner(System.in);
     String userInput;
 
@@ -43,7 +43,15 @@ public void format() {
     userInput = scanner.nextLine();
     setlName(userInput);
 
+    scanner.close();
+    
     System.out.println("Values set successfully.");
+}
+
+public void displayName() {
+	System.out.println("First name: "+this.getfName());
+	System.out.println("Middle name: "+this.getmName());
+	System.out.println("Last name: "+this.getlName());
 }
 
 

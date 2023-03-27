@@ -15,6 +15,7 @@ public class CGPA {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter number of subject: ");
         numOfSubject = scanner.nextInt();
+        System.out.println("Enter according to respective number of subject.");
         for (int i = 0; i < numOfSubject; i++){
             System.out.print("Enter credit hour: ");
             creditHour = scanner.nextInt();
@@ -53,6 +54,7 @@ public class CGPA {
             fullCreditHour += creditHour;
         }
         gpa = totalPoint / fullCreditHour;
+        scanner.close();
         return gpa;
     }
     public void add(double gpa, int i) {
@@ -90,6 +92,7 @@ public class CGPA {
                 System.out.print("Enter which option number: ");
                 option = scanner.nextInt();
             }
+            
         }
         System.out.println("Thank you!!");
     }

@@ -1,11 +1,12 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 public class TaskType {
-    public final ArrayList<String> type;
-
-    public TaskType(ArrayList<String> type) {
-        this.type = type;
+    public ArrayList<String> type;
+    
+    public TaskType() {
+    	type =new ArrayList<>();
     }
+
 
     public int getIndex(String type) {
         return this.type.indexOf(type);
@@ -19,13 +20,11 @@ public class TaskType {
         this.type.remove(index);
     }
 
-    public void addType(String type) {
-        this.type.add(type);
+    public void addType(String type1) {
+        this.type.add(type1);
     }
     // nak call TaskType.tasktype();
-    public static void tasktype() {
-        ArrayList<String> types = new ArrayList<>();
-        TaskType taskType = new TaskType(types);
+    public void tasktype() {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
@@ -41,19 +40,19 @@ public class TaskType {
                 case 1:
                     System.out.print("Enter task type: ");
                     String type = scanner.next();
-                    taskType.addType(type);
+                    this.addType(type);
                     System.out.println(type + " added.");
                     break;
                 case 2:
                     System.out.print("Enter task type index: ");
                     int index = scanner.nextInt();
-                    taskType.removeType(index);
+                    this.removeType(index);
                     System.out.println("Task type removed.");
                     break;
                 case 3:
                     System.out.println("Task types:");
-                    for (int i = 0; i < taskType.type.size(); i++) {
-                        System.out.println(i + ": " + taskType.type.get(i));
+                    for (int i = 0; i < this.type.size(); i++) {
+                        System.out.println(i + ": " + this.type.get(i));
                     }
                     break;
                 case 4:
@@ -64,11 +63,7 @@ public class TaskType {
                     System.out.println("Invalid choice. Try again.");
                     break;
             }
+           
         }
     }
 }
-    
-    
-    
-    
-    
