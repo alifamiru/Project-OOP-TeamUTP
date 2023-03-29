@@ -39,6 +39,7 @@ public class TaskType {
             switch (choice) {
                 case 1:
                     System.out.print("Enter task type: ");
+                    scanner.nextLine();
                     String type = scanner.next();
                     this.addType(type);
                     System.out.println(type + " added.");
