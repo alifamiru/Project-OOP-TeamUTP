@@ -98,6 +98,7 @@ public class Subject extends Lecturer{
         System.out.println();
     }
 
+    // UNIT TESTING
     public static void main(String[] args){
         // CREATING THE OBJECTS OF THE CLASS
         Subject subject1 = new Subject();
