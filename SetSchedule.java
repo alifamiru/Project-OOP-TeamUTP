@@ -49,6 +49,7 @@ public class SetSchedule {
         return this.subjectName.indexOf(subjectname);
     }
 
+    // UNIT TESTING
     public static void main(String[] args) {
         SetSchedule schedule1 = new SetSchedule();
 
