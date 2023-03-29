@@ -4,9 +4,10 @@ public class ListOfCGPA {
     private int numOfSemester;
     private double cgpa;
     private double gpa;
-    private double totalGPA;
+    
     //methods of operations
     public double calcCGPA(){
+	double totalGPA = 0;
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter number of semester: ");
         numOfSemester = scanner.nextInt();
