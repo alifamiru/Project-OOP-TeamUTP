@@ -1,38 +1,38 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 public class TaskType {
-    public ArrayList<String> type;
+    private static ArrayList<String> type;
     
     public TaskType() {
     	type =new ArrayList<>();
     }
 
 
-    public int getIndex(String type) {
-        return this.type.indexOf(type);
+    public static ArrayList<String> getType() {
+    	return type;
     }
 
-    public String getType(int index) {
-        return this.type.get(index);
+    public static String getTypeindi(int index) {
+        return type.get(index);
     }
 
     public void removeType(int index) {
-        this.type.remove(index);
+        type.remove(index);
     }
 
     public void addType(String type1) {
-        this.type.add(type1);
+        type.add(type1);
     }
-    // nak call TaskType.tasktype();
+    // to call TaskType.tasktype();
     public void tasktype() {
         Scanner scanner = new Scanner(System.in);
-
-        while (true) {
+        boolean loop=true; 
+        while (loop==true) {
             System.out.println("Choose an option:");
             System.out.println("1. Add task type");
             System.out.println("2. Remove task type");
             System.out.println("3. View task types");
-            System.out.println("4. Exit");
+            System.out.println("4. Return");
 
             int choice = scanner.nextInt();
 
@@ -40,7 +40,7 @@ public class TaskType {
                 case 1:
                     System.out.print("Enter task type: ");
                     scanner.nextLine();
-                    String type = scanner.next();
+                    String type = scanner.nextLine();
                     this.addType(type);
                     System.out.println(type + " added.");
                     break;
@@ -52,13 +52,13 @@ public class TaskType {
                     break;
                 case 3:
                     System.out.println("Task types:");
-                    for (int i = 0; i < this.type.size(); i++) {
-                        System.out.println(i + ": " + this.type.get(i));
+                    for (int i = 0; i < TaskType.type.size(); i++) {
+                        System.out.println(i + ": " + TaskType.type.get(i));
                     }
                     break;
                 case 4:
-                    System.out.println("Exiting...");
-                    System.exit(0);
+                    System.out.println("Returning...");
+                    loop=false;
                     break;
                 default:
                     System.out.println("Invalid choice. Try again.");
@@ -67,4 +67,23 @@ public class TaskType {
            
         }
     }
+    public void main (String[] args) {
+    	Scanner scanner = new Scanner(System.in);
+    	to_do_list todoList = new to_do_list();
+    	for(int i1=0;i1<todoList.type.size();i1++) {
+			System.out.println("No. "+i1);
+			todoList.getType(i1);
+		}
+    	System.out.println("Enter choice of task type:");
+    	int choice = scanner.nextInt();
+    	for(int o=0;o<todoList.list.size();o++) {
+    		if(todoList.type.get(choice).equals(todoList.list.get(o).gettaskType())) {
+    			todoList.list.get(o);
+    			
+    		}
+    	}
+    	
+    }
+     
+    
 }
